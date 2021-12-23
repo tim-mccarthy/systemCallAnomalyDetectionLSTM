@@ -45,10 +45,10 @@ def build_model():
     layers = {'input': feature_dimension, 'hidden1': 64, 'hidden2': 256, 'hidden3': 100, 'output': feature_dimension}
 
     model.add(LSTM(
-            input_length=sequence_length,
-            input_dim=layers['input'],
-            output_dim=layers['hidden1'],
-            return_sequences=True))
+        layers['hidden1'],
+        input_length=sequence_length,
+        input_dim=layers['input'],
+        return_sequences=True))
     model.add(Dropout(0.2))
 
     model.add(LSTM(
@@ -62,7 +62,8 @@ def build_model():
     model.add(Dropout(0.2))
 
     model.add(Dense(
-            output_dim=layers['output'],activation='softmax'))
+        layers['output'],
+        activation='softmax'))
     #model.add(Activation("linear"))
 
     start = time.time()
