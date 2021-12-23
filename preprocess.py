@@ -28,7 +28,7 @@ def dropin(X, y):
 
 def preprocess():
 
-    arrayfile = "/Users/ketian/Desktop/array_test.pickle"
+    arrayfile = "array_test.pickle"
     array = io_helper.loadfrompickle(arrayfile)
     x_train = array[:,:-1]
     y_train = array[:,-1]
