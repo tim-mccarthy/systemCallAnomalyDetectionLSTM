@@ -70,7 +70,7 @@ def build_model():
     model.compile(loss="categorical_crossentropy", optimizer='rmsprop',  metrics=['accuracy'])
     #model.compile(loss="mse", optimizer="rmsprop")
 
-    print "Compilation Time : ", time.time() - start
+    print ("Compilation Time : ", time.time() - start)
     return model
 
 
@@ -79,7 +79,7 @@ def run_network(model=None, data=None):
     global_start_time = time.time()
 
     if data is None:
-        print 'Loading data... '
+        print ('Loading data... ')
         # train on first 700 samples and test on next 300 samples (has anomaly)
         X_train, y_train  = preprocess.preprocess()
     else:
@@ -88,7 +88,7 @@ def run_network(model=None, data=None):
     print ("X_train, y_train,shape")
     print (X_train.shape)
     print (y_train.shape)
-    print '\nData Loaded. Compiling...\n'
+    print ('\nData Loaded. Compiling...\n')
 
     if model is None:
         model = build_model()

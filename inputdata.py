@@ -52,7 +52,7 @@ def get_all_call_sequences(dire):
             if key not in elements:
                 elements.append(key)
 
-    elements = map(int,elements)
+    elements = list(map(int ,elements))
     elements = sorted(elements)
 
     print ("The total unique elements:")
@@ -69,7 +69,7 @@ def get_all_call_sequences(dire):
     _max = 0
     for i in range(0,len(allthelist)):
         _max = max(_max,len(allthelist[i]))
-        allthelist[i] = map(int,allthelist[i])
+        allthelist[i] = list(map(int,allthelist[i]))
 
 
     print ("The maximum length of a sequence is that {}".format(_max))
